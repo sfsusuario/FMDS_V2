@@ -1,5 +1,65 @@
+import { useState } from 'react';
 import { Link } from '@inertiajs/react';
 import Layout from '../Components/Layout';
+
+const PROJECT_GALLERIES = {
+    1: [
+        '/img/proyectos/p1_main.jpeg',
+    ],
+    2: [
+        '/img/proyectos/p2_main.jpeg',
+        '/img/proyectos/p2_b.jpeg',
+        '/img/proyectos/p2_c.jpeg',
+        '/img/proyectos/p2_d.jpeg',
+        '/img/proyectos/p2_e.jpeg',
+    ],
+    3: [
+        '/img/proyectos/p3_main.jpeg',
+        '/img/proyectos/p3_b.jpeg',
+        '/img/proyectos/p3_c.jpeg',
+    ],
+    4: [
+        '/img/proyectos/p4_main.jpeg',
+        '/img/proyectos/p4_b.jpeg',
+        '/img/proyectos/p4_c.jpeg',
+        '/img/proyectos/p4_d.jpeg',
+    ],
+    5: [
+        '/img/proyectos/p5_main.jpeg',
+    ],
+};
+
+function Gallery({ images }) {
+    const [active, setActive] = useState(0);
+    if (!images?.length) return null;
+
+    return (
+        <div className="mb-10">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg bg-gray-100">
+                <img
+                    src={images[active]}
+                    alt=""
+                    className="w-full h-80 md:h-96 object-cover transition-opacity duration-300"
+                />
+            </div>
+            {images.length > 1 && (
+                <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+                    {images.map((img, i) => (
+                        <button
+                            key={i}
+                            onClick={() => setActive(i)}
+                            className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                                i === active ? 'border-secondary-500 opacity-100' : 'border-transparent opacity-60 hover:opacity-90'
+                            }`}
+                        >
+                            <img src={img} alt="" className="w-full h-full object-cover" />
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default function Proyecto({ project }) {
     if (!project) {
@@ -11,6 +71,8 @@ export default function Proyecto({ project }) {
             </Layout>
         );
     }
+
+    const gallery = PROJECT_GALLERIES[project.id] ?? (project.imagen ? [project.imagen] : []);
 
     return (
         <Layout>
@@ -29,10 +91,8 @@ export default function Proyecto({ project }) {
 
             <section className="py-16 bg-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    {project.imagen && (
-                        <img src={project.imagen} alt={project.titulo}
-                            className="w-full h-80 object-cover rounded-2xl shadow mb-10" />
-                    )}
+                    <Gallery images={gallery} />
+
                     {project.contenido && (
                         <div
                             className="prose prose-lg max-w-none text-gray-700 prose-headings:text-primary-800 prose-a:text-secondary-500"
