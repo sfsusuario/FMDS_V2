@@ -1,0 +1,6 @@
+# Redirige todo al directorio public/ de Laravel
+# Necesario cuando Hostinger apunta el dominio a la raíz del repo
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
