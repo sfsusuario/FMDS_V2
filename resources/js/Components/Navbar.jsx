@@ -40,13 +40,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-                        <div className="w-10 h-10 bg-primary-800 rounded-full flex items-center justify-center">
-                            <span className="text-white font-serif font-bold text-sm">MS</span>
-                        </div>
-                        <div className="hidden sm:block">
-                            <p className="text-primary-800 font-serif font-bold text-sm leading-tight">Fundación Mesa del Señor</p>
-                            <p className="text-secondary-500 text-xs italic">La pasión de compartir</p>
-                        </div>
+                        <img src="/img/logo_completo_2.png" alt="Fundación Mesa del Señor" className="h-10 w-auto" />
                     </Link>
 
                     {/* Desktop menu */}
