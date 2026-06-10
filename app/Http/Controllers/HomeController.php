@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use App\Models\Prayer;
 use App\Models\Project;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -13,10 +14,12 @@ class HomeController extends Controller
     {
         $projects = Project::all();
         $latestNews = News::latest()->take(3)->get();
+        $prayers = Prayer::where('estado', 'aprobada')->where('visible', true)->latest()->take(12)->get(['id', 'nombre', 'plegaria']);
 
         return Inertia::render('Home', [
-            'projects' => $projects,
+            'projects'  => $projects,
             'latestNews' => $latestNews,
+            'prayers'   => $prayers,
         ]);
     }
 

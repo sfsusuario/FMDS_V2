@@ -30,13 +30,23 @@ export default function DianEsal() {
                         </p>
 
                         <div className="mt-8 p-6 bg-cream rounded-2xl border-l-4 border-secondary-500">
-                            <h3 className="font-semibold text-primary-800 mb-2">Documentos disponibles</h3>
-                            <p className="text-gray-600 text-sm">
-                                Para solicitar información sobre nuestra situación tributaria, informes financieros o cualquier documento de transparencia institucional, comunícate con nosotros a través del correo{' '}
-                                <a href="mailto:fundacionmesadelsenorofm@gmail.com" className="text-secondary-500 hover:underline">
-                                    fundacionmesadelsenorofm@gmail.com
-                                </a>
+                            <h3 className="font-semibold text-primary-800 mb-2">
+                                Permanencia en el Régimen Tributario Especial — NIT 900.601.231-9
+                            </h3>
+                            <p className="text-gray-600 text-sm mb-4">
+                                En cumplimiento del Decreto 2150 del 20 de diciembre de 2017 y el Artículo 364-5 del Estatuto Tributario, ponemos a disposición del público los documentos de nuestra gestión institucional. Nuestra política en el manejo de los recursos es de total transparencia y austeridad, para que sus donativos cumplan su objetivo.
                             </p>
+                            <a
+                                href="https://drive.google.com/drive/folders/178WGBYGgwQm6HR-zVws3iBio7T2Je6Nm?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-800 hover:bg-primary-700 text-white font-semibold rounded-lg transition-colors"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+                                </svg>
+                                Ver documentos
+                            </a>
                         </div>
                     </div>
                 </div>

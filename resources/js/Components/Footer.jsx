@@ -8,7 +8,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="lg:col-span-1">
                         <div className="mb-4">
-                            <img src="/img/logo_completo_2.png" alt="Fundación Mesa del Señor" className="h-14 w-auto brightness-0 invert opacity-90" />
+                            <img src="/img/logo_completo_2.png" alt="Fundación Mesa del Señor" className="h-14 w-auto opacity-90" />
                         </div>
                         <p className="text-sm text-gray-400 leading-relaxed">
                             Lugar de encuentro espiritual que implementa proyectos altruistas en comunidades vulnerables de Colombia, con valores franciscanos de fraternidad y solidaridad.

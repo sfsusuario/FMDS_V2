@@ -14,6 +14,8 @@ return new class extends Migration
             $table->string('telefono')->nullable();
             $table->string('email')->nullable();
             $table->text('plegaria');
+            $table->enum('estado', ['pendiente', 'aprobada', 'rechazada'])->default('pendiente');
+            $table->boolean('visible')->default(false);
             $table->timestamps();
         });
     }

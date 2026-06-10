@@ -1,6 +1,131 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useForm, usePage } from '@inertiajs/react';
 import Layout from '../Components/Layout';
+
+const HERO_SLIDES = [
+    '/img/hero_banner.jpg',
+    '/img/hero_slider2.jpeg',
+    '/img/proyectos/p3_main.jpeg',
+];
+
+const TEAM = [
+    { name: 'Fray Nelson Tovar Alarcón', role: 'Presidente', email: 'ravot64@gmail.com', foto: '/img/equipo/presidente.jpeg' },
+    { name: 'Fray Alonso Morales Duque', role: 'Secretario Ejecutivo', email: 'alonsony93@gmail.com', foto: '/img/equipo/secretario.jpeg' },
+    { name: 'Florencia Cataño', role: 'Vicepresidenta', email: 'florenciacatano@gmail.com', foto: '/img/equipo/vicepresidente.jpeg' },
+];
+
+function HeroSlider() {
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const t = setInterval(() => setCurrent(c => (c + 1) % HERO_SLIDES.length), 5000);
+        return () => clearInterval(t);
+    }, []);
+
+    return (
+        <div className="absolute inset-0">
+            {HERO_SLIDES.map((src, i) => (
+                <div
+                    key={i}
+                    className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+                    style={{ backgroundImage: `url(${src})` }}
+                />
+            ))}
+            <div className="absolute inset-0 bg-primary-900 bg-opacity-70" />
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {HERO_SLIDES.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className={`w-2.5 h-2.5 rounded-full transition-all ${i === current ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/70'}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
+
+function PrayerQuotes({ prayers }) {
+    const [idx, setIdx] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    useEffect(() => {
+        if (prayers.length <= 1) return;
+        const t = setInterval(() => {
+            setVisible(false);
+            setTimeout(() => {
+                setIdx(i => (i + 1) % prayers.length);
+                setVisible(true);
+            }, 600);
+        }, 7000);
+        return () => clearInterval(t);
+    }, [prayers.length]);
+
+    if (!prayers.length) return null;
+    const p = prayers[idx];
+
+    return (
+        <section className="relative py-24 bg-primary-900 overflow-hidden">
+            {/* Dot pattern background */}
+            <div className="absolute inset-0 opacity-[0.07]"
+                style={{ backgroundImage: 'radial-gradient(#D4A017 1.5px, transparent 1.5px)', backgroundSize: '30px 30px' }} />
+
+            {/* Soft vignette */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary-900/60 via-transparent to-primary-900/60 pointer-events-none" />
+
+            <div className="relative max-w-3xl mx-auto px-6 text-center">
+                <span className="text-secondary-400 text-xs font-medium uppercase tracking-[0.3em]">
+                    Voces de nuestra comunidad
+                </span>
+                <h2 className="mt-3 text-3xl font-serif font-bold text-white mb-12">
+                    En oración juntos
+                </h2>
+
+                {/* Quote card */}
+                <div className="transition-opacity duration-500" style={{ opacity: visible ? 1 : 0 }}>
+                    <div className="relative px-10 py-2">
+                        {/* Opening quote */}
+                        <span className="absolute top-0 left-0 text-[7rem] font-serif text-secondary-400 opacity-30 leading-none select-none"
+                            style={{ lineHeight: 1 }}>&ldquo;</span>
+
+                        <p className="relative text-xl md:text-2xl font-serif italic text-white/90 leading-relaxed">
+                            {p.plegaria.length > 300 ? p.plegaria.substring(0, 300) + '…' : p.plegaria}
+                        </p>
+
+                        {/* Closing quote */}
+                        <span className="absolute bottom-0 right-0 text-[7rem] font-serif text-secondary-400 opacity-30 leading-none select-none"
+                            style={{ lineHeight: 1 }}>&rdquo;</span>
+                    </div>
+
+                    {/* Author */}
+                    <div className="mt-8 flex items-center justify-center gap-4">
+                        <div className="h-px w-14 bg-secondary-400/40" />
+                        <span className="text-secondary-300 font-medium text-sm tracking-widest uppercase">
+                            {p.nombre}
+                        </span>
+                        <div className="h-px w-14 bg-secondary-400/40" />
+                    </div>
+                </div>
+
+                {/* Dot navigation */}
+                {prayers.length > 1 && (
+                    <div className="flex justify-center items-center gap-2 mt-10">
+                        {prayers.map((_, i) => (
+                            <button key={i}
+                                onClick={() => { setVisible(false); setTimeout(() => { setIdx(i); setVisible(true); }, 300); }}
+                                className={`rounded-full transition-all duration-300 ${
+                                    i === idx
+                                        ? 'w-7 h-2 bg-secondary-400'
+                                        : 'w-2 h-2 bg-white/25 hover:bg-white/60'
+                                }`}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
+        </section>
+    );
+}
 
 function PrayerForm() {
     const { data, setData, post, processing, errors, reset, recentlySuccessful } = useForm({
@@ -88,16 +213,13 @@ function PrayerForm() {
     );
 }
 
-export default function Home({ projects = [], latestNews = [] }) {
+export default function Home({ projects = [], latestNews = [], prayers = [] }) {
     return (
         <Layout>
-            {/* Hero */}
-            <section className="relative text-white overflow-hidden">
-                <div className="absolute inset-0">
-                    <img src="/img/hero_banner.jpg" alt="" className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-primary-900 bg-opacity-70" />
-                </div>
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            {/* Hero carousel */}
+            <section className="relative text-white overflow-hidden" style={{ minHeight: '600px' }}>
+                <HeroSlider />
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40" style={{ zIndex: 1 }}>
                     <div className="max-w-3xl">
                         <span className="inline-block px-3 py-1 bg-secondary-500 bg-opacity-20 border border-secondary-400 text-secondary-300 text-xs font-medium rounded-full uppercase tracking-widest mb-6">
                             Fundación Mesa del Señor
@@ -184,8 +306,38 @@ export default function Home({ projects = [], latestNews = [] }) {
                 </div>
             </section>
 
-            {/* Projects */}
+            {/* Team */}
             <section className="py-16 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-12">
+                        <span className="text-secondary-500 text-sm font-medium uppercase tracking-widest">Personas</span>
+                        <h2 className="mt-2 text-3xl font-serif font-bold text-primary-900">Nuestro Equipo</h2>
+                        <p className="mt-3 text-gray-600">Al servicio de Mesa del Señor</p>
+                    </div>
+                    <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        {TEAM.map(member => (
+                            <div key={member.email} className="text-center">
+                                <div className="mx-auto w-36 h-36 rounded-full overflow-hidden shadow-lg ring-4 ring-secondary-200 mb-4">
+                                    <img
+                                        src={member.foto}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <h3 className="font-serif font-bold text-primary-800 leading-snug">{member.name}</h3>
+                                <p className="text-secondary-600 text-sm font-medium mt-1">{member.role}</p>
+                                <a href={`mailto:${member.email}`}
+                                    className="text-xs text-gray-500 hover:text-primary-700 transition-colors mt-1 block">
+                                    {member.email}
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Projects */}
+            <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <span className="text-secondary-500 text-sm font-medium uppercase tracking-widest">Impacto</span>
@@ -197,12 +349,21 @@ export default function Home({ projects = [], latestNews = [] }) {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.slice(0, 6).map((project, i) => (
                             <Link key={project.id} href={`/proyecto/${project.id}`}
-                                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden group">
-                                <div className="h-3 bg-gradient-to-r from-primary-700 to-secondary-500" />
-                                <div className="p-6">
-                                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                                        <span className="text-primary-800 font-bold text-lg">{i + 1}</span>
-                                    </div>
+                                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden group border border-gray-100">
+                                <div className="h-44 overflow-hidden bg-gradient-to-br from-primary-700 to-secondary-500">
+                                    {project.imagen ? (
+                                        <img
+                                            src={project.imagen}
+                                            alt={project.titulo}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full flex items-center justify-center">
+                                            <span className="text-white font-bold text-3xl font-serif">{i + 1}</span>
+                                        </div>
+                                    )}
+                                </div>
+                                <div className="p-5">
                                     <h3 className="font-serif font-bold text-primary-800 group-hover:text-secondary-600 transition-colors leading-snug">
                                         {project.titulo}
                                     </h3>
@@ -229,7 +390,7 @@ export default function Home({ projects = [], latestNews = [] }) {
 
             {/* News */}
             {latestNews.length > 0 && (
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-gray-50">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex justify-between items-end mb-10">
                             <div>
@@ -243,7 +404,7 @@ export default function Home({ projects = [], latestNews = [] }) {
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {latestNews.map(article => (
                                 <Link key={article.id} href={`/noticias/${article.slug}`}
-                                    className="group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                                    className="group border border-gray-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow bg-white">
                                     {article.imagen ? (
                                         <img src={article.imagen} alt={article.titulo}
                                             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -269,6 +430,27 @@ export default function Home({ projects = [], latestNews = [] }) {
                     </div>
                 </section>
             )}
+
+            {/* Map */}
+            <section className="bg-primary-900 py-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-2xl font-serif font-bold text-white text-center mb-6">¿Dónde estamos?</h2>
+                    <div className="rounded-2xl overflow-hidden shadow-xl" style={{ height: '420px' }}>
+                        <iframe
+                            src="https://www.google.com/maps/d/embed?mid=1igGGTuc9bZ10K7kNzbzIkkdbeVl9s98"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            title="Ubicaciones Fundación Mesa del Señor"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            {/* Prayer quotes */}
+            <PrayerQuotes prayers={prayers} />
 
             {/* Prayer form */}
             <PrayerForm />

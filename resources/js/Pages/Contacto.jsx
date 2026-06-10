@@ -2,9 +2,9 @@ import { useForm, usePage } from '@inertiajs/react';
 import Layout from '../Components/Layout';
 
 const leaders = [
-    { name: 'Fray Nelson Tovar Alarcón', role: 'Presidente', email: 'ravot64@gmail.com' },
-    { name: 'Fray Alonso Morales Duque', role: 'Secretario Ejecutivo', email: 'alonsony93@gmail.com' },
-    { name: 'Florencia Cataño', role: 'Vicepresidenta', email: 'florenciacatano@gmail.com' },
+    { name: 'Fray Nelson Tovar Alarcón', role: 'Presidente', email: 'ravot64@gmail.com', foto: '/img/equipo/presidente.jpeg' },
+    { name: 'Fray Alonso Morales Duque', role: 'Secretario Ejecutivo', email: 'alonsony93@gmail.com', foto: '/img/equipo/secretario.jpeg' },
+    { name: 'Florencia Cataño', role: 'Vicepresidenta', email: 'florenciacatano@gmail.com', foto: '/img/equipo/vicepresidente.jpeg' },
 ];
 
 const locations = [
@@ -111,10 +111,12 @@ export default function Contacto() {
                                 <h2 className="text-2xl font-serif font-bold text-primary-900 mb-4">Equipo directivo</h2>
                                 <div className="space-y-4">
                                     {leaders.map(l => (
-                                        <div key={l.email} className="flex items-start gap-4 p-4 bg-cream rounded-xl">
-                                            <div className="w-10 h-10 bg-primary-800 rounded-full flex items-center justify-center flex-shrink-0 text-white font-serif font-bold text-sm">
-                                                {l.name.charAt(0)}
-                                            </div>
+                                        <div key={l.email} className="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                                            <img
+                                                src={l.foto}
+                                                alt={l.name}
+                                                className="w-14 h-14 rounded-full object-cover flex-shrink-0 ring-2 ring-secondary-300"
+                                            />
                                             <div>
                                                 <p className="font-semibold text-primary-800">{l.name}</p>
                                                 <p className="text-sm text-gray-500">{l.role}</p>
@@ -173,6 +175,25 @@ export default function Contacto() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Map */}
+            <section className="bg-primary-900 py-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-2xl font-serif font-bold text-white text-center mb-6">¿Dónde estamos?</h2>
+                    <div className="rounded-2xl overflow-hidden shadow-xl" style={{ height: '480px' }}>
+                        <iframe
+                            src="https://www.google.com/maps/d/embed?mid=1igGGTuc9bZ10K7kNzbzIkkdbeVl9s98"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Ubicaciones Fundación Mesa del Señor"
+                        />
                     </div>
                 </div>
             </section>

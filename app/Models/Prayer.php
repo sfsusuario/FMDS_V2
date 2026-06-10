@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prayer extends Model
 {
-    protected $fillable = ['nombre', 'telefono', 'email', 'plegaria'];
+    protected $fillable = ['nombre', 'telefono', 'email', 'plegaria', 'estado', 'visible'];
 }

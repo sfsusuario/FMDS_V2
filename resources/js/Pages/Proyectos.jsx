@@ -17,15 +17,19 @@ export default function Proyectos({ projects = [] }) {
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-6">
-                        {projects.map((project, i) => (
+                        {projects.map((project) => (
                             <div key={project.id}
-                                className="flex flex-col md:flex-row gap-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 md:p-8">
-                                <div className="flex-shrink-0">
-                                    <div className="w-16 h-16 bg-gradient-to-br from-primary-700 to-secondary-500 rounded-2xl flex items-center justify-center text-white text-2xl font-serif font-bold shadow">
-                                        {i + 1}
+                                className="flex flex-col md:flex-row gap-0 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                                {project.imagen && (
+                                    <div className="flex-shrink-0 md:w-56 h-48 md:h-auto">
+                                        <img
+                                            src={project.imagen}
+                                            alt={project.titulo}
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
-                                </div>
-                                <div className="flex-1">
+                                )}
+                                <div className="flex-1 p-6 md:p-8">
                                     <h2 className="text-xl font-serif font-bold text-primary-800 mb-2">
                                         {project.titulo}
                                     </h2>

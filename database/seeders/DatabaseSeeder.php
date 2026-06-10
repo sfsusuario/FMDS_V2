@@ -2,14 +2,23 @@
 
 namespace Database\Seeders;
 
+use App\Models\News;
 use App\Models\Project;
 use App\Models\SpiritualityArticle;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        User::create([
+            'name'     => 'Administrador',
+            'email'    => 'admin@mesadelsenor.co',
+            'password' => Hash::make('admin1234'),
+        ]);
+
         Project::insert([
             [
                 'titulo' => 'Proyecto para la Formación Franciscana',
@@ -58,13 +67,26 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+        News::insert([
+            [
+                'titulo' => 'Bienvenidos a la Mesa del Señor',
+                'slug' => 'bienvenidos-a-la-mesa-del-senor',
+                'extracto' => 'En un emotivo evento que reunió a hermanos y hermanas de distintas partes del país y el mundo, se llevó a cabo el XI Banquete de la Mesa del Señor en Santa Rosa de C.',
+                'contenido' => '<p>Santa Rosa de C., Colombia — En un emotivo evento que reunió a hermanos y hermanas de distintas partes del país y el mundo, se llevó a cabo el <strong>XI Banquete de la Mesa del Señor</strong> en Santa Rosa de C.</p><p>Esta celebración, que va más allá de lo religioso, representa un "lugar espiritual" donde se comparten experiencias, se fortalecen lazos fraternos y se trabaja en proyectos con un impacto positivo en la comunidad.</p><p>El encuentro reunió a voluntarios, beneficiarios y frailes franciscanos comprometidos con la misión de la Fundación: construir un Colombia más justa y fraternal, desde los valores del Evangelio y el carisma de San Francisco de Asís.</p>',
+                'imagen' => '/img/noticias/noticia1_main.jpeg',
+                'publicado_en' => '2024-06-08',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+
         SpiritualityArticle::insert([
             [
                 'titulo' => 'La iglesia es mi casa',
                 'slug' => 'la-iglesia-es-mi-casa',
                 'extracto' => 'La palabra hogar tiene una etimología interesante: proviene del latín "focus", que hace referencia al fuego del hogar, centro de la vida familiar.',
                 'contenido' => '<p>La palabra hogar tiene una etimología interesante: proviene del latín <em>focus</em>, que hace referencia al fuego del hogar, centro de la vida familiar y comunitaria.</p><p>San Francisco de Asís encontró en la Iglesia su verdadero hogar. No una institución fría, sino una comunidad viva donde el amor de Cristo se hace presente en cada hermano y hermana.</p><p>Hoy, como franciscanos, seguimos construyendo ese hogar que es la Iglesia: un lugar de acogida, de fraternidad y de esperanza para todos los que buscan a Dios.</p>',
-                'imagen' => null,
+                'imagen' => '/img/espiritualidad/art1_main.png',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -73,7 +95,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'mi-pequeno-pesebre',
                 'extracto' => 'El Papa escribió la hermosa carta "Admirabile signum" sobre el significado espiritual del pesebre como símbolo de la encarnación de Cristo.',
                 'contenido' => '<p>El Papa Francisco escribió la hermosa carta <em>Admirabile signum</em> sobre el significado espiritual del pesebre, ese signo admirable que San Francisco de Asís instituyó en Greccio en 1223.</p><p>El pesebre nos recuerda que Dios eligió nacer en la pobreza, entre animales y pastores, para estar cerca de los más humildes.</p><p>En nuestras comunidades del Catatumbo y de Cali, cada pesebre que se arma es una profesión de fe: creemos en un Dios que se hace pequeño para levantarnos.</p>',
-                'imagen' => null,
+                'imagen' => '/img/espiritualidad/art2_main.jpeg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -82,7 +104,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'pidiendo-alcanzar-la-paz',
                 'extracto' => 'Una reflexión sobre la búsqueda de la paz como don del Espíritu, en medio de los desafíos que vive nuestra Colombia.',
                 'contenido' => '<p>La paz no es simplemente la ausencia de guerra. Es un don del Espíritu Santo que hay que cultivar, pedir y construir cada día.</p><p>San Francisco lo entendió así cuando compuso su Cántico de las Criaturas, celebrando la armonía de toda la creación como reflejo de la paz de Dios.</p><p>En Colombia, pedir la paz es también comprometerse con ella: en las aulas, en los campos del Catatumbo, en los barrios de Cali y Medellín donde trabajamos.</p>',
-                'imagen' => null,
+                'imagen' => '/img/espiritualidad/art3_main.jpeg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
