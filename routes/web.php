@@ -4,9 +4,12 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SpiritualityController;
 use App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 // Público
 Route::get('/', [HomeController::class, 'index'])->name('home');

@@ -1,68 +1,68 @@
 {
-  "_AdminLayout-C0jPiP6h.js": {
-    "file": "assets/AdminLayout-C0jPiP6h.js",
+  "_AdminLayout-Cxp6L9SA.js": {
+    "file": "assets/AdminLayout-Cxp6L9SA.js",
     "name": "AdminLayout",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_Layout-pW2BXn21.js": {
-    "file": "assets/Layout-pW2BXn21.js",
+  "_Layout-BfLp6LWJ.js": {
+    "file": "assets/Layout-BfLp6LWJ.js",
     "name": "Layout",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_RichEditor-BTwuJYcV.js": {
-    "file": "assets/RichEditor-BTwuJYcV.js",
+  "_RichEditor-B64cAfgw.js": {
+    "file": "assets/RichEditor-B64cAfgw.js",
     "name": "RichEditor",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
   "resources/js/Pages/Admin/Configuracion/Index.jsx": {
-    "file": "assets/Index-DRmC_3sM.js",
+    "file": "assets/Index-BWUoZBNd.js",
     "name": "Index",
     "src": "resources/js/Pages/Admin/Configuracion/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js"
+      "_AdminLayout-Cxp6L9SA.js"
     ]
   },
   "resources/js/Pages/Admin/Dashboard.jsx": {
-    "file": "assets/Dashboard-pj51M6Sg.js",
+    "file": "assets/Dashboard-CuTul6xo.js",
     "name": "Dashboard",
     "src": "resources/js/Pages/Admin/Dashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js"
+      "_AdminLayout-Cxp6L9SA.js"
     ]
   },
   "resources/js/Pages/Admin/Espiritualidad/Form.jsx": {
-    "file": "assets/Form-CcveeyCT.js",
+    "file": "assets/Form-B5P-MyXN.js",
     "name": "Form",
     "src": "resources/js/Pages/Admin/Espiritualidad/Form.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js",
-      "_RichEditor-BTwuJYcV.js"
+      "_AdminLayout-Cxp6L9SA.js",
+      "_RichEditor-B64cAfgw.js"
     ]
   },
   "resources/js/Pages/Admin/Espiritualidad/Index.jsx": {
-    "file": "assets/Index-B8fJxLrm.js",
+    "file": "assets/Index-CZp7DQ5o.js",
     "name": "Index",
     "src": "resources/js/Pages/Admin/Espiritualidad/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js"
+      "_AdminLayout-Cxp6L9SA.js"
     ]
   },
   "resources/js/Pages/Admin/Login.jsx": {
-    "file": "assets/Login-Cc-9RZAu.js",
+    "file": "assets/Login-RvJphgvX.js",
     "name": "Login",
     "src": "resources/js/Pages/Admin/Login.jsx",
     "isDynamicEntry": true,
@@ -71,169 +71,169 @@
     ]
   },
   "resources/js/Pages/Admin/Noticias/Form.jsx": {
-    "file": "assets/Form-BlHISS_8.js",
+    "file": "assets/Form-DYG6WGGq.js",
     "name": "Form",
     "src": "resources/js/Pages/Admin/Noticias/Form.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js",
-      "_RichEditor-BTwuJYcV.js"
+      "_AdminLayout-Cxp6L9SA.js",
+      "_RichEditor-B64cAfgw.js"
     ]
   },
   "resources/js/Pages/Admin/Noticias/Index.jsx": {
-    "file": "assets/Index-WRoJy6Ws.js",
+    "file": "assets/Index-BLdAQi-6.js",
     "name": "Index",
     "src": "resources/js/Pages/Admin/Noticias/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js"
+      "_AdminLayout-Cxp6L9SA.js"
     ]
   },
   "resources/js/Pages/Admin/Plegarias/Index.jsx": {
-    "file": "assets/Index-CyDlvDDS.js",
+    "file": "assets/Index-BNuX1Y0q.js",
     "name": "Index",
     "src": "resources/js/Pages/Admin/Plegarias/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js"
+      "_AdminLayout-Cxp6L9SA.js"
     ]
   },
   "resources/js/Pages/Admin/Proyectos/Form.jsx": {
-    "file": "assets/Form-C5v8xI1A.js",
+    "file": "assets/Form-DdOumVPz.js",
     "name": "Form",
     "src": "resources/js/Pages/Admin/Proyectos/Form.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js",
-      "_RichEditor-BTwuJYcV.js"
+      "_AdminLayout-Cxp6L9SA.js",
+      "_RichEditor-B64cAfgw.js"
     ]
   },
   "resources/js/Pages/Admin/Proyectos/Index.jsx": {
-    "file": "assets/Index-Byp4sSSd.js",
+    "file": "assets/Index-C1d73IMs.js",
     "name": "Index",
     "src": "resources/js/Pages/Admin/Proyectos/Index.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_AdminLayout-C0jPiP6h.js"
+      "_AdminLayout-Cxp6L9SA.js"
     ]
   },
   "resources/js/Pages/Apoyanos.jsx": {
-    "file": "assets/Apoyanos-BQp_bqCi.js",
+    "file": "assets/Apoyanos-BirJYkkG.js",
     "name": "Apoyanos",
     "src": "resources/js/Pages/Apoyanos.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/CodigoEtico.jsx": {
-    "file": "assets/CodigoEtico-CDUm3Kjr.js",
+    "file": "assets/CodigoEtico-DGoZsJvN.js",
     "name": "CodigoEtico",
     "src": "resources/js/Pages/CodigoEtico.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/Contacto.jsx": {
-    "file": "assets/Contacto-BCpFmjlB.js",
+    "file": "assets/Contacto-DgDocHDG.js",
     "name": "Contacto",
     "src": "resources/js/Pages/Contacto.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/DianEsal.jsx": {
-    "file": "assets/DianEsal-YA8E-KUw.js",
+    "file": "assets/DianEsal-DAOyPzc_.js",
     "name": "DianEsal",
     "src": "resources/js/Pages/DianEsal.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/Espiritualidad.jsx": {
-    "file": "assets/Espiritualidad-BoheQEp1.js",
+    "file": "assets/Espiritualidad-CVmRI4dK.js",
     "name": "Espiritualidad",
     "src": "resources/js/Pages/Espiritualidad.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/EspiritualidadArticulo.jsx": {
-    "file": "assets/EspiritualidadArticulo-BiZrxIeH.js",
+    "file": "assets/EspiritualidadArticulo-BfYgK9qW.js",
     "name": "EspiritualidadArticulo",
     "src": "resources/js/Pages/EspiritualidadArticulo.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-_d1GtjsN.js",
+    "file": "assets/Home-DSXbdIjd.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/NoticiaDetalle.jsx": {
-    "file": "assets/NoticiaDetalle-MZ8i-xDK.js",
+    "file": "assets/NoticiaDetalle-DmKMPI17.js",
     "name": "NoticiaDetalle",
     "src": "resources/js/Pages/NoticiaDetalle.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/Noticias.jsx": {
-    "file": "assets/Noticias-DUeIxefl.js",
+    "file": "assets/Noticias-DKW4UTRB.js",
     "name": "Noticias",
     "src": "resources/js/Pages/Noticias.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/Proyecto.jsx": {
-    "file": "assets/Proyecto-WYrS0RkR.js",
+    "file": "assets/Proyecto-DPrJTSms.js",
     "name": "Proyecto",
     "src": "resources/js/Pages/Proyecto.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/Pages/Proyectos.jsx": {
-    "file": "assets/Proyectos-DCvmVpeA.js",
+    "file": "assets/Proyectos-Dqqg-6Ab.js",
     "name": "Proyectos",
     "src": "resources/js/Pages/Proyectos.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_Layout-pW2BXn21.js"
+      "_Layout-BfLp6LWJ.js"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-BCVWPASD.js",
+    "file": "assets/app-BXke3v_S.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,

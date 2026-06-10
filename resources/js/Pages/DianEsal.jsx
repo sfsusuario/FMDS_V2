@@ -2,7 +2,10 @@ import Layout from '../Components/Layout';
 
 export default function DianEsal() {
     return (
-        <Layout>
+        <Layout
+            title="DIAN-ESAL"
+            description="Información sobre la Fundación Mesa del Señor como Entidad Sin Ánimo de Lucro (ESAL) ante la DIAN en Colombia."
+        >
             <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span className="text-secondary-400 text-sm font-medium uppercase tracking-widest">Transparencia</span>

@@ -215,7 +215,10 @@ function PrayerForm() {
 
 export default function Home({ projects = [], latestNews = [], prayers = [] }) {
     return (
-        <Layout>
+        <Layout
+            description="Somos un lugar de encuentro espiritual que trabaja en comunidades vulnerables de Colombia, implementando proyectos altruistas con valores franciscanos de fraternidad y solidaridad."
+            image="https://mesadelsenor.co/img/hero_banner.jpg"
+        >
             {/* Hero carousel */}
             <section className="relative text-white overflow-hidden" style={{ minHeight: '600px' }}>
                 <HeroSlider />

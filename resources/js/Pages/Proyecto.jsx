@@ -75,7 +75,11 @@ export default function Proyecto({ project }) {
     const gallery = PROJECT_GALLERIES[project.id] ?? (project.imagen ? [project.imagen] : []);
 
     return (
-        <Layout>
+        <Layout
+            title={project.titulo}
+            description={project.descripcion || project.titulo}
+            image={gallery[0] ? `https://mesadelsenor.co${gallery[0]}` : undefined}
+        >
             <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-16">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Link href="/proyectos" className="inline-flex items-center gap-2 text-primary-300 hover:text-white text-sm mb-6 transition-colors">

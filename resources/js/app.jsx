@@ -4,10 +4,8 @@ import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
-const appName = document.querySelector('meta[name="app-name"]')?.content ?? 'Mesa del Señor';
-
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title) => title,
     resolve: (name) =>
         resolvePageComponent(`./Pages/${name}.jsx`, import.meta.glob('./Pages/**/*.jsx')),
     setup({ el, App, props }) {

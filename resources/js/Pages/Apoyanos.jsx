@@ -3,7 +3,10 @@ import Layout from '../Components/Layout';
 
 export default function Apoyanos({ projects = [] }) {
     return (
-        <Layout>
+        <Layout
+            title="Apóyanos"
+            description="Apoya la Fundación Mesa del Señor con tu donación. Tu contribución transforma vidas en las comunidades más vulnerables de Colombia."
+        >
             {/* Hero */}
             <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -3,7 +3,12 @@ import Layout from '../Components/Layout';
 
 export default function EspiritualidadArticulo({ article }) {
     return (
-        <Layout>
+        <Layout
+            title={article.titulo}
+            description={article.extracto || article.titulo}
+            image={article.imagen || undefined}
+            type="article"
+        >
             <div className="bg-gradient-to-br from-accent-700 to-primary-800 text-white py-14">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Link href="/espiritualidad" className="inline-flex items-center gap-2 text-green-200 hover:text-white text-sm mb-6 transition-colors">

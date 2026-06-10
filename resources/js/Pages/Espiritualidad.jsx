@@ -3,7 +3,10 @@ import Layout from '../Components/Layout';
 
 export default function Espiritualidad({ articles = [] }) {
     return (
-        <Layout>
+        <Layout
+            title="Espiritualidad"
+            description="Reflexiones franciscanas para alimentar la fe y el compromiso con la vida fraterna. Artículos de espiritualidad de la Fundación Mesa del Señor."
+        >
             <section className="bg-gradient-to-br from-accent-700 to-primary-800 text-white py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span className="text-secondary-400 text-sm font-medium uppercase tracking-widest">Reflexión y Fe</span>

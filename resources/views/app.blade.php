@@ -3,11 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Fundación Mesa del Señor - La pasión de compartir. Proyectos sociales franciscanos en Colombia.">
-        <meta property="og:title" content="Fundación Mesa del Señor">
-        <meta property="og:description" content="La pasión de compartir - Proyectos sociales franciscanos en Colombia">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ url()->current() }}">
+        <meta name="robots" content="index, follow">
+        <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <title inertia>{{ config('app.name', 'Fundación Mesa del Señor') }}</title>
         @routes

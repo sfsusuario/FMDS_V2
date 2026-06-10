@@ -3,7 +3,10 @@ import Layout from '../Components/Layout';
 
 export default function Proyectos({ projects = [] }) {
     return (
-        <Layout>
+        <Layout
+            title="Proyectos"
+            description="Cinco iniciativas que transforman comunidades con valores franciscanos de paz, fraternidad y cuidado de la creación. Proyectos sociales en Colombia."
+        >
             <section className="bg-gradient-to-br from-primary-800 to-accent-700 text-white py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span className="text-secondary-400 text-sm font-medium uppercase tracking-widest">Impacto social</span>

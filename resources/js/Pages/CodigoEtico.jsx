@@ -29,7 +29,10 @@ const principios = [
 
 export default function CodigoEtico() {
     return (
-        <Layout>
+        <Layout
+            title="Código Ético"
+            description="Conoce el Código Ético de la Fundación Mesa del Señor: nuestros principios de transparencia, respeto y compromiso social franciscano."
+        >
             <section className="bg-gradient-to-br from-primary-800 to-accent-700 text-white py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span className="text-secondary-400 text-sm font-medium uppercase tracking-widest">Valores institucionales</span>

@@ -5,7 +5,10 @@ export default function Noticias({ news }) {
     const articles = news?.data ?? [];
 
     return (
-        <Layout>
+        <Layout
+            title="Noticias"
+            description="Últimas noticias y novedades de la Fundación Mesa del Señor. Proyectos sociales franciscanos en Colombia."
+        >
             <section className="bg-gradient-to-br from-primary-800 to-primary-900 text-white py-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <span className="text-secondary-400 text-sm font-medium uppercase tracking-widest">Actualidad</span>
