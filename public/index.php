@@ -2,36 +2,17 @@
 
 define('LARAVEL_START', microtime(true));
 
-/*
-|--------------------------------------------------------------------------
-| Check If The Application Is Under Maintenance
-|--------------------------------------------------------------------------
-*/
+// On Hostinger shared hosting, the Laravel app lives at ~/laravel/
+// while public_html is at ~/domains/mesadelsenor.co/public_html/ (3 levels from ~)
+// In local dev, public/ is directly inside the Laravel root, so ../  works normally.
+$laravelBase = is_dir(__DIR__.'/../vendor') ? __DIR__.'/..' : __DIR__.'/../../../laravel';
 
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+if (file_exists($maintenance = $laravelBase.'/storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-*/
+require $laravelBase.'/vendor/autoload.php';
 
-require __DIR__.'/../vendor/autoload.php';
+$app = require_once $laravelBase.'/bootstrap/app.php';
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-*/
-
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-)->send();
-
-$kernel->terminate($request, $response);
+$app->handleRequest(Illuminate\Http\Request::capture());

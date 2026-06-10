@@ -109,5 +109,16 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ],
         ]);
+
+        // Settings defaults
+        \App\Models\Setting::updateOrCreate(['key' => 'telefono'],            ['value' => '+57 (4) 123 4567']);
+        \App\Models\Setting::updateOrCreate(['key' => 'whatsapp'],            ['value' => '+573001234567']);
+        \App\Models\Setting::updateOrCreate(['key' => 'direccion'],           ['value' => 'Medellín, Colombia']);
+        \App\Models\Setting::updateOrCreate(['key' => 'email_contacto'],      ['value' => 'contacto@mesadelsenor.co']);
+        \App\Models\Setting::updateOrCreate(['key' => 'descripcion_hero'],    ['value' => 'Somos un lugar de encuentro espiritual que trabaja en comunidades vulnerables de Colombia, implementando proyectos altruistas con valores franciscanos de fraternidad y solidaridad.']);
+        \App\Models\Setting::updateOrCreate(['key' => 'descripcion_quienes'], ['value' => 'La Fundación Mesa del Señor es un espacio de encuentro espiritual y acción social inspirado en los valores franciscanos. Durante más de 40 años, la Provincia Franciscana San Pablo Apóstol ha trabajado en Colombia construyendo fraternidad y solidaridad.']);
+        \App\Models\Setting::updateOrCreate(['key' => 'facebook_url'],        ['value' => '']);
+        \App\Models\Setting::updateOrCreate(['key' => 'instagram_url'],       ['value' => '']);
+        \App\Models\Setting::updateOrCreate(['key' => 'youtube_url'],         ['value' => '']);
     }
 }

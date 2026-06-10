@@ -112,7 +112,16 @@ export default function Footer() {
             <div className="border-t border-primary-700">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500">
                     <p>© {new Date().getFullYear()} Fundación Mesa del Señor. Todos los derechos reservados.</p>
-                    <p>Desarrollado por <span className="text-secondary-400">Sam FS — Unisoft</span></p>
+                    <div className="flex items-center gap-3">
+                        <a href="https://fierro.dev" target="_blank" rel="noopener noreferrer"
+                            className="text-gray-600 hover:text-secondary-400 transition-colors">
+                            fierro.dev
+                        </a>
+                        <span className="text-gray-700">·</span>
+                        <a href="/admin/login" className="text-gray-700 hover:text-gray-500 transition-colors opacity-40 hover:opacity-70">
+                            Admin
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>

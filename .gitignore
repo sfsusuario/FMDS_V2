@@ -22,7 +22,7 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-/public/build
+# /public/build — incluido en git para deploy en hosting sin Node.js
 /storage/pail
 .env.backup
 .env.production

@@ -9,7 +9,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ url()->current() }}">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        <title inertia>{{ config('app.name', 'Mesa del Señor') }}</title>
+        <title inertia>{{ config('app.name', 'Fundación Mesa del Señor') }}</title>
         @routes
         @viteReactRefresh
         @vite(['resources/js/app.jsx'])

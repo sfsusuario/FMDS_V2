@@ -53,6 +53,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('espiritualidad/{espiritualidad}',     [Admin\SpiritualityController::class, 'update'])->name('espiritualidad.update');
     Route::delete('espiritualidad/{espiritualidad}',   [Admin\SpiritualityController::class, 'destroy'])->name('espiritualidad.destroy');
 
+    Route::get('configuracion',                  [Admin\SettingsController::class, 'index'])->name('configuracion');
+    Route::post('configuracion',                 [Admin\SettingsController::class, 'update'])->name('configuracion.update');
+
     Route::get('plegarias',                      [Admin\PrayerController::class, 'index'])->name('plegarias');
     Route::post('plegarias/{prayer}/aprobar',    [Admin\PrayerController::class, 'approve'])->name('plegarias.approve');
     Route::post('plegarias/{prayer}/rechazar',   [Admin\PrayerController::class, 'reject'])->name('plegarias.reject');
