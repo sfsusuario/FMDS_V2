@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prayer;
+use App\Models\TeamMember;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -13,7 +14,9 @@ class ContactController extends Controller
 {
     public function index(): Response
     {
-        return Inertia::render('Contacto');
+        return Inertia::render('Contacto', [
+            'team' => TeamMember::where('activo', true)->orderBy('orden')->get(['id', 'nombre', 'cargo', 'email', 'foto']),
+        ]);
     }
 
     public function send(Request $request): RedirectResponse

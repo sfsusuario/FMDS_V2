@@ -56,6 +56,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('espiritualidad/{espiritualidad}',     [Admin\SpiritualityController::class, 'update'])->name('espiritualidad.update');
     Route::delete('espiritualidad/{espiritualidad}',   [Admin\SpiritualityController::class, 'destroy'])->name('espiritualidad.destroy');
 
+    Route::get('equipo',               [Admin\TeamMemberController::class, 'index'])->name('equipo');
+    Route::get('equipo/crear',         [Admin\TeamMemberController::class, 'create'])->name('equipo.create');
+    Route::post('equipo',              [Admin\TeamMemberController::class, 'store'])->name('equipo.store');
+    Route::get('equipo/{equipo}/edit', [Admin\TeamMemberController::class, 'edit'])->name('equipo.edit');
+    Route::post('equipo/{equipo}',     [Admin\TeamMemberController::class, 'update'])->name('equipo.update');
+    Route::delete('equipo/{equipo}',   [Admin\TeamMemberController::class, 'destroy'])->name('equipo.destroy');
+
     Route::get('configuracion',                  [Admin\SettingsController::class, 'index'])->name('configuracion');
     Route::post('configuracion',                 [Admin\SettingsController::class, 'update'])->name('configuracion.update');
 

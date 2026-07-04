@@ -6,6 +6,7 @@ const CARDS = [
     { label: 'Noticias',       key: 'news',          href: '/admin/noticias',       color: 'bg-green-500' },
     { label: 'Espiritualidad', key: 'spirituality',  href: '/admin/espiritualidad', color: 'bg-purple-500' },
     { label: 'Plegarias',      key: 'prayers',       href: '/admin/plegarias',      color: 'bg-rose-500' },
+    { label: 'Equipo',         key: 'team',          href: '/admin/equipo',         color: 'bg-amber-500' },
 ];
 
 export default function Dashboard({ stats }) {

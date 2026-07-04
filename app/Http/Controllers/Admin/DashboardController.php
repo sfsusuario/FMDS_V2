@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Prayer;
 use App\Models\Project;
 use App\Models\SpiritualityArticle;
+use App\Models\TeamMember;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -20,6 +21,7 @@ class DashboardController extends Controller
                 'news'        => News::count(),
                 'spirituality' => SpiritualityArticle::count(),
                 'prayers'     => Prayer::count(),
+                'team'        => TeamMember::count(),
             ],
         ]);
     }

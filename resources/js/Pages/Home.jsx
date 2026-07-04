@@ -8,12 +8,6 @@ const HERO_SLIDES = [
     '/img/proyectos/p3_main.jpeg',
 ];
 
-const TEAM = [
-    { name: 'Fray Nelson Tovar Alarcón', role: 'Presidente', email: 'ravot64@gmail.com', foto: '/img/equipo/presidente.jpeg' },
-    { name: 'Fray Alonso Morales Duque', role: 'Secretario Ejecutivo', email: 'alonsony93@gmail.com', foto: '/img/equipo/secretario.jpeg' },
-    { name: 'Florencia Cataño', role: 'Vicepresidenta', email: 'florenciacatano@gmail.com', foto: '/img/equipo/vicepresidente.jpeg' },
-];
-
 function HeroSlider() {
     const [current, setCurrent] = useState(0);
 
@@ -213,7 +207,7 @@ function PrayerForm() {
     );
 }
 
-export default function Home({ projects = [], latestNews = [], prayers = [] }) {
+export default function Home({ projects = [], latestNews = [], prayers = [], team = [] }) {
     return (
         <Layout
             description="Somos un lugar de encuentro espiritual que trabaja en comunidades vulnerables de Colombia, implementando proyectos altruistas con valores franciscanos de fraternidad y solidaridad."
@@ -318,21 +312,23 @@ export default function Home({ projects = [], latestNews = [], prayers = [] }) {
                         <p className="mt-3 text-gray-600">Al servicio de Mesa del Señor</p>
                     </div>
                     <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        {TEAM.map(member => (
-                            <div key={member.email} className="text-center">
+                        {team.map(member => (
+                            <div key={member.id} className="text-center">
                                 <div className="mx-auto w-36 h-36 rounded-full overflow-hidden shadow-lg ring-4 ring-secondary-200 mb-4">
                                     <img
                                         src={member.foto}
-                                        alt={member.name}
+                                        alt={member.nombre}
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <h3 className="font-serif font-bold text-primary-800 leading-snug">{member.name}</h3>
-                                <p className="text-secondary-600 text-sm font-medium mt-1">{member.role}</p>
-                                <a href={`mailto:${member.email}`}
-                                    className="text-xs text-gray-500 hover:text-primary-700 transition-colors mt-1 block">
-                                    {member.email}
-                                </a>
+                                <h3 className="font-serif font-bold text-primary-800 leading-snug">{member.nombre}</h3>
+                                <p className="text-secondary-600 text-sm font-medium mt-1">{member.cargo}</p>
+                                {member.email && (
+                                    <a href={`mailto:${member.email}`}
+                                        className="text-xs text-gray-500 hover:text-primary-700 transition-colors mt-1 block">
+                                        {member.email}
+                                    </a>
+                                )}
                             </div>
                         ))}
                     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Prayer;
 use App\Models\Project;
+use App\Models\TeamMember;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -20,6 +21,7 @@ class HomeController extends Controller
             'projects'  => $projects,
             'latestNews' => $latestNews,
             'prayers'   => $prayers,
+            'team'      => TeamMember::where('activo', true)->orderBy('orden')->get(['id', 'nombre', 'cargo', 'email', 'foto']),
         ]);
     }
 

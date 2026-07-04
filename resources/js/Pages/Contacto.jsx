@@ -1,19 +1,13 @@
 import { useForm, usePage } from '@inertiajs/react';
 import Layout from '../Components/Layout';
 
-const leaders = [
-    { name: 'Fray Nelson Tovar Alarcón', role: 'Presidente', email: 'ravot64@gmail.com', foto: '/img/equipo/presidente.jpeg' },
-    { name: 'Fray Alonso Morales Duque', role: 'Secretario Ejecutivo', email: 'alonsony93@gmail.com', foto: '/img/equipo/secretario.jpeg' },
-    { name: 'Florencia Cataño', role: 'Vicepresidenta', email: 'florenciacatano@gmail.com', foto: '/img/equipo/vicepresidente.jpeg' },
-];
-
 const locations = [
     { city: 'Medellín', address: 'Calle 55 No. 39-54, Barrio Boston' },
     { city: 'Cali (sede 1)', address: 'Carrera 101 #12-39, Casa 21' },
     { city: 'Cali (Aguablanca)', address: 'Calle 108 No. 26, Aguablanca' },
 ];
 
-export default function Contacto() {
+export default function Contacto({ team = [] }) {
     const { flash } = usePage().props;
     const { data, setData, post, processing, errors, reset } = useForm({
         nombre: '', email: '', asunto: '', mensaje: '',
@@ -113,18 +107,20 @@ export default function Contacto() {
                             <div>
                                 <h2 className="text-2xl font-serif font-bold text-primary-900 mb-4">Equipo directivo</h2>
                                 <div className="space-y-4">
-                                    {leaders.map(l => (
-                                        <div key={l.email} className="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                                    {team.map(l => (
+                                        <div key={l.id} className="flex items-center gap-4 p-4 bg-cream rounded-xl">
                                             <img
                                                 src={l.foto}
-                                                alt={l.name}
+                                                alt={l.nombre}
                                                 className="w-14 h-14 rounded-full object-cover flex-shrink-0 ring-2 ring-secondary-300"
                                             />
                                             <div>
-                                                <p className="font-semibold text-primary-800">{l.name}</p>
-                                                <p className="text-sm text-gray-500">{l.role}</p>
-                                                <a href={`mailto:${l.email}`}
-                                                    className="text-sm text-secondary-500 hover:underline">{l.email}</a>
+                                                <p className="font-semibold text-primary-800">{l.nombre}</p>
+                                                <p className="text-sm text-gray-500">{l.cargo}</p>
+                                                {l.email && (
+                                                    <a href={`mailto:${l.email}`}
+                                                        className="text-sm text-secondary-500 hover:underline">{l.email}</a>
+                                                )}
                                             </div>
                                         </div>
                                     ))}
